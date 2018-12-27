@@ -28,12 +28,13 @@ if __name__ == "__main__":
         tempUrl = QueueAllUrl.pop(0)
         allUrls = findAllUrls(tempUrl,allUrls,QueueAllUrl)
         
-    print("webpages in this website ", allUrls)
+    #print("webpages in this website ", allUrls)
     for tempUrl in allUrls:
-        print("scrapping : ",tempUrl)
+        #print("scrapping : ",tempUrl)
         WordCounter += webScrap(tempUrl)
         
        
     sorted_by_value = sorted(WordCounter.items(), key=lambda kv: kv[1])
     
-    print(sorted_by_value[-5:][::-1])
+    for item in sorted_by_value[-5:][::-1]:
+        print(item[0])
